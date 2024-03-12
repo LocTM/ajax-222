@@ -21,6 +21,8 @@ function showAllCustomer(){
 showAllCustomer();
 
 function createNewCustomer(){
+    //chan su kien mac dinh
+    // event.preventDefault();
     //lay du lieu
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
