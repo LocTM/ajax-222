@@ -11,6 +11,7 @@ function showAllCustomer(){
        <td>${data[i].id}</td>
        <td>${data[i].firstName}</td>
        <td>${data[i].lastName}</td>
+       <td><button onclick="deleteCustomer(${data[i].id})">Delete</button></td>
    </tr>`
             }
             document.getElementById("list").innerHTML = content;
@@ -41,4 +42,14 @@ function createNewCustomer(){
         data: JSON.stringify(newCustomer),
         success: showAllCustomer
     })
+}
+
+function deleteCustomer(id) {
+    $.ajax({
+        type: "DELETE",
+        //tên API
+        url: `http://localhost:8080//api/customers/${id}`,
+        //xử lý khi thành công
+        success: showAllCustomer
+    });
 }
